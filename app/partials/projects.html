@@ -27,16 +27,19 @@
 
   <md-content>
     <md-list>
-      <md-list-item class="md-3-line" ng-repeat="project in projectsList.projects">
+      <md-list-item  layout="row" layout-xs="column" class="md-3-line" ng-repeat="project in projectsList.projects">
+        <div flex>
         <div class="md-list-item-text">
           <h3>{{project.title}}</h3>
           <h4>{{project.website}}</h4>
           <p>{{project.desc}}</p>
           <input type="hidden" value="{{project.id}}">
         </div>
+        </div>
+        <div flex>
         <md-button class="md-secondary" ng-click="projectsList.bindSelectedProject(project)" md-colors="{background: 'deep-purple'}">Edit</md-button>
         <md-button class="md-secondary" ng-click="projectsList.removeProject(project)" md-colors="{background: 'red'}">Remove</md-button>
-        <md-divider ng-if="!$last"></md-divider>
+        <md-divider ng-if="!$last"></md-divider></div>
       </md-list-item>
       <md-list-item class="md-3-line" ng-show="!projectsList.projects.length">
         <div class="md-list-item-text">

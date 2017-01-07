@@ -27,16 +27,20 @@
 
   <md-content>
     <md-list>
-      <md-list-item class="md-3-line" ng-repeat="education in educationList.educations">
+      <md-list-item layout="row" layout-xs="column" class="md-3-line" ng-repeat="education in educationList.educations">
+        <div flex>
         <div class="md-list-item-text">
           <h3>{{education.school_name}}</h3>
           <h4>{{education.degree}}</h4>
           <p>{{education.duration}}</p>
           <input type="hidden" value="{{education.id}}">
         </div>
+        </div>
+        <div flex>
         <md-button class="md-secondary" ng-click="educationList.bindSelectedEducation(education)" md-colors="{background: 'deep-purple'}">Edit</md-button>
         <md-button class="md-secondary" ng-click="educationList.removeEducation(education)" md-colors="{background: 'red'}">Remove</md-button>
         <md-divider ng-if="!$last"></md-divider>
+        </div>
       </md-list-item>
       <md-list-item class="md-3-line" ng-show="!educationList.educations.length">
         <div class="md-list-item-text">
