@@ -239,3 +239,10 @@ footer a{
     #top_tabs { display: none; }
     #downloadHeader {display: none;}
 }
+
+@media screen and (max-width: 600px){
+    .list-item-margin
+    {
+    margin: -70px 0px;
+    }
+}
